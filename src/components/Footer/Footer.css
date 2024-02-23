@@ -1,0 +1,36 @@
+.footer {
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #000000;
+  bottom: 0px;
+  position: fixed;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom{
+  width: 95%;
+  margin: auto;
+}
+
+.social-icons{
+  font-size: 25px;
+  margin-right: 50px;
+}
+
+.branding{
+  width: 400px;
+  margin-left: 50px;
+  text-align: left;
+}
+
+.logo-image{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}

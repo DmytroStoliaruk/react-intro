@@ -1,0 +1,13 @@
+.items-content{
+  display: flex;
+  justify-content: center;
+}
+
+.items-list {
+  display: flex; 
+  margin-top: 20px;
+  padding-left: 15%;
+  padding-right: 15%;
+  justify-content: space-between;
+  width: 100%;
+}
