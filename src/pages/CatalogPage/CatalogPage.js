@@ -1,6 +1,8 @@
 import CatalogCard from '../../components/CatalogCard/CatalogCard';
 import Button from '@mui/material/Button';
 import SelectElement from '../../components/SelectElement/SelectElement';
+import './CatalogPage.css';
+
 
 function CatalogPage() {
   const catalogData = [
@@ -23,7 +25,23 @@ function CatalogPage() {
 
   return (
     <div>
-      <SelectElement />
+      <div class='params'>
+        <div class='filters'> 
+          <SelectElement
+            label="Filter 1"
+            items={[ { value: 10, label: 'Products' }, { value: 20, label: 'Services' }, { value: 30, label: 'Material' } ]}
+          />  
+          <SelectElement
+            label="Filter 2"
+            items={[ { value: 10, label: 'Price' }, { value: 20, label: 'Count' } ]}
+          />  
+          <SelectElement
+            label="Filter 3"
+            items={[ { value: 10, label: 'Owner' }, { value: 20, label: 'Client' }, { value: 30, label: 'Other' } ]}
+          />  
+        </div>
+        <Button variant="contained" style={{ width: '100px', height: '40px', borderRadius: '10px',  margin: '15px' }}>Apply</Button>
+      </div>  
       <div class='catalog-content'>  
         <div className="catalog-list">
           {catalogData.map((item, index) => (
@@ -31,7 +49,6 @@ function CatalogPage() {
           ))}
         </div>
       </div>  
-      <Button variant="contained" style={{ marginTop: '30px' }}>View more</Button>
     </div>
   );
 }
