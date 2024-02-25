@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Header.css';
 import Logo from '../Logo/Logo';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
-  const [active, setActive] = useState('Home'); 
 
   return (
-    <header class="header">
+    <header className="header">
       <Logo />
       <nav className="navigation">
         <ul>
-          <li className={active === 'Home' ? 'active' : ''} onClick={() => setActive('Home')}>Home</li>
-          <li className={active === 'Catalog' ? 'active' : ''} onClick={() => setActive('Catalog')}>Catalog</li>
-          <li className={active === 'Cart' ? 'active' : ''} onClick={() => setActive('Cart')}>Cart</li>
+          <li><NavLink to="/" className="link" activeClassName="active">Home</NavLink></li>
+          <li><NavLink to="/catalog" className="link" activeClassName="active">Catalog</NavLink></li>
+          <li><NavLink to="/cart" className="link" activeClassName="active">Cart</NavLink></li>
         </ul>
       </nav>
     </header>

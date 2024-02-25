@@ -1,6 +1,6 @@
-import ItemCard from '../ItemCard/ItemCard';
-import ItemMain from '../ItemMain/ItemMain';
-import './Content.css';
+import ItemCard from '../../components/ItemCard/ItemCard';
+import ItemMain from '../../components/ItemMain/ItemMain';
+import './HomePage.css';
 import Button from '@mui/material/Button';
 
 function Content() {
