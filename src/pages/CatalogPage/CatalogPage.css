@@ -1,11 +1,25 @@
 .params{
   display: flex;
-  align-items: center;
   justify-content: space-between;
   margin-left: 5%;
   margin-right: 5%;
+  border-bottom: 1px solid;
 }
 
 .filters{
   display: flex;
+}
+
+.catalog-content{
+  display: flex;
+  justify-content: center;
+}
+
+.catalog-list {
+  display: flex; 
+  margin-top: 20px;
+  padding-left: 15%;
+  padding-right: 15%;
+  justify-content: space-between;
+  width: 100%;
 }

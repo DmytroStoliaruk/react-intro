@@ -1,9 +1,11 @@
 import React from 'react';
 import './Header.css';
 import Logo from '../Logo/Logo';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
+import SearchInput from '../../components/SearchInput/SearchInput';
 
 function Header() {
+  const location = useLocation();
 
   return (
     <header className="header">
@@ -15,6 +17,7 @@ function Header() {
           <li><NavLink to="/cart" className="link" activeClassName="active">Cart</NavLink></li>
         </ul>
       </nav>
+      {location.pathname === '/catalog' && <SearchInput />}    
     </header>
   );
 }

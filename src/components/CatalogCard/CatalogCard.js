@@ -1,48 +1,49 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
+import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { Button, CardActionArea, CardActions } from '@mui/material';
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-  >
-    •
-  </Box>
-);
-
-const card = (
-  <React.Fragment>
-    <CardContent>
-      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-        Word of the Day
-      </Typography>
-      <Typography variant="h5" component="div">
-        be{bull}nev{bull}o{bull}lent
-      </Typography>
-      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-        adjective
-      </Typography>
-      <Typography variant="body2">
-        well meaning and kindly.
-        <br />
-        {'"a benevolent smile"'}
-      </Typography>
-    </CardContent>
-    <CardActions>
-      <Button size="small">Learn More</Button>
-    </CardActions>
-  </React.Fragment>
-);
-
-export default function OutlinedCard() {
+export default function CatalogCard(data) {
   return (
-    <Box sx={{ minWidth: 275 }}>
-      <Card variant="outlined">{card}</Card>
-    </Box>
+    <Card sx={{ margin: '20px', borderRadius: '10px', border: '1px solid' }}>
+      <Typography component="div" 
+        sx={{ 
+          backgroundColor: '#e0e0e0', 
+          height: '35px', 
+          display: 'flex', 
+          alignItems: 'center', 
+          paddingLeft: '10px' 
+        }}>
+        Item {data.index}
+      </Typography>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          image={data.imageUrl}
+          alt="alt text"
+          sx={{ width: '200px', height: '150px', marginTop: '15px', 
+                display: 'block', marginLeft: 'auto', marginRight: 'auto'
+        }}
+        />
+        <CardContent>
+          <Typography  variant="h5" component="div">
+            {data.title}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ width: '100%', textAlign: 'left', marginBottom: '40px' }}>
+            {data.text}
+          </Typography>     
+          <Typography variant="body1" component="div" sx={{ width: '100%', marginTop: '10px', textAlign: 'left' }}>
+            <b>Price:</b> <span style={{ marginLeft: '6rem' }}>${data.price}</span>
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions style={{ justifyContent: 'center' }}>
+        <Button size="small" variant="contained" style={{ width: '170px', height: '40px', borderRadius: '10px',  marginTop: '15px', marginBottom: '15px' }}> 
+          View more
+        </Button>
+      </CardActions>
+    </Card>
   );
 }

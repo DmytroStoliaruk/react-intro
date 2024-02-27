@@ -16,6 +16,9 @@
   display: flex;
   justify-content: center; 
   flex-grow: 1;
+  position: absolute; 
+  left: 50%; 
+  transform: translateX(-50%); 
 }
 
 .navigation ul {
